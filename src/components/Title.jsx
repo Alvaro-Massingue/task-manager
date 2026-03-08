@@ -10,21 +10,21 @@ const Title = () => {
 
   useEffect(() => {
     if (index < title.length) {
-      const show = setInterval(() => {
+      const show = setTimeout(() => {
         setShowTitle((prev) => prev + title[index]);
         setIndex(index + 1);
       }, 100);
-      return () => clearInterval(show);
+      return () => clearTimeout(show);
     }
   }, [index]);
 
   useEffect(() => {
     if (index === title.length && indexD < description.length) {
-      const showDescription = setInterval(() => {
+      const showDescription = setTimeout(() => {
         setShowDescription((prev) => prev + description[indexD]);
         setIndexD(indexD + 1);
       }, 100);
-      return () => clearInterval(showDescription);
+      return () => clearTimeout(showDescription);
     }
   }, [index, indexD]);
   
